@@ -17,12 +17,12 @@
 		"issues": "https://github.com/romanmatyus/Unique/issues"
 	},
 	"require": {
-		"php": ">=5.4",
-		"nette/utils": ">=2.2"
+		"php": ">=5.4"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "~0.8",
-		"nette/tester": "@dev"
+		"nette/tester": "@dev",
+		"nette/utils": ">=2.2"
 	},
 	"autoload": {
 		"psr-0": {

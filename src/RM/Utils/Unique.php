@@ -2,8 +2,6 @@
 
 namespace RM\Utils;
 
-use Nette;
-
 /**
  * Uniqe is simple library for generating unique filenames in directories.
  *
