@@ -1,0 +1,32 @@
+{
+	"name": "rm/unique",
+	"type": "library",
+	"description": "Library for generating unique file names.",
+	"keywords": ["unique", "filenames", "rm"],
+	"homepage": "https://github.com/romanmatyus/Unique",
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "Roman Mátyus",
+			"homepage": "http://romiix.org",
+			"email": "romanmatyus@romiix.org"
+		}
+	],
+	"support": {
+		"email": "romanmatyus@romiix.org",
+		"issues": "https://github.com/romanmatyus/Unique/issues"
+	},
+	"require": {
+		"php": ">=5.4",
+		"nette/utils": ">=2.2"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "~0.8",
+		"nette/tester": "@dev"
+	},
+	"autoload": {
+		"psr-0": {
+			"RM\\Utils\\Unique": "src/"
+		}
+	}
+}

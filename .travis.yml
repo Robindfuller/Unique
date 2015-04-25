@@ -1,0 +1,29 @@
+language: php
+php:
+    - 5.4
+    - 5.5
+    - 5.6
+    - 7.0
+    - hhvm
+    - hhvm-nightly
+
+matrix:
+    allow_failures:
+        - php: 7.0
+        - php: hhvm
+        - php: hhvm-nightly
+
+before_script:
+    - composer self-update
+    - composer install --no-interaction --prefer-source
+    - ./vendor/bin/parallel-lint -e php,phpt --exclude vendor .
+
+script:
+    - vendor/bin/tester tests -s -c tests/php-unix.ini --coverage coverage.xml --coverage-src src
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.xml
+
+after_failure:
+    - for i in $(find tests -name \*.actual); do echo "--- $i"; cat $i; echo; echo; done
