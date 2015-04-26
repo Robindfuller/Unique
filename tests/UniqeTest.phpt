@@ -26,13 +26,6 @@ class UniqueTest extends Tester\TestCase
 			unlink($dir . DIRECTORY_SEPARATOR . $file);
 		rmdir($dir);
 	}
-
-	/**
-	 * @dataProvider same.ini
-	 */
-	public function testSame($filename) {
-		Assert::same($filename, Unique::get($filename));
-	}
 }
 
 $testCase = new UniqueTest;

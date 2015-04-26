@@ -18,34 +18,33 @@ class Unique
 	 * @param  string $dir      Directory where will be file saved
 	 * @return string           Output filename
 	 */
-	public static function get($filename, $dir = NULL)
+	public static function get($filename, $dir)
 	{
-		if (is_null($dir)) {
+		if (!file_exists($dir . DIRECTORY_SEPARATOR . $filename))
 			return $filename;
-		} else {
-			$path_parts = pathinfo($filename);
 
-			$name = $path_parts['filename'];
-			$extension = $path_parts['extension'];
+		$path_parts = pathinfo($filename);
 
-			preg_match("/" . self::$separator . "(?<order>\d+)$/", $name, $tmp);
-			$order = (isset($tmp['order'])) ? $tmp['order'] : NULL;
+		$name = $path_parts['filename'];
+		$extension = $path_parts['extension'];
 
-			$nameWithoutOrder = (isset($tmp['order'])) ? substr($name, 0, -strlen(self::$separator . $order)) : $name;
+		preg_match("/" . self::$separator . "(?<order>\d+)$/", $name, $tmp);
+		$order = (isset($tmp['order'])) ? $tmp['order'] : NULL;
 
-			$generateNewName = function ($order) use ($nameWithoutOrder, $extension) {
-				$n = $nameWithoutOrder;
-				$n .= (is_null($order)) ? NULL : self::$separator . $order;
-				$n .= '.' . $extension;
-				return $n;
-			};
+		$nameWithoutOrder = (isset($tmp['order'])) ? substr($name, 0, -strlen(self::$separator . $order)) : $name;
 
-			$newName = $generateNewName($order);
+		$generateNewName = function ($order) use ($nameWithoutOrder, $extension) {
+			$n = $nameWithoutOrder;
+			$n .= (is_null($order)) ? NULL : self::$separator . $order;
+			$n .= '.' . $extension;
+			return $n;
+		};
 
-			while (file_exists($dir . DIRECTORY_SEPARATOR . $newName))
-				$newName = $generateNewName($order++);
+		$newName = $generateNewName($order);
 
-			return $newName;
-		}
+		while (file_exists($dir . DIRECTORY_SEPARATOR . $newName))
+			$newName = $generateNewName($order++);
+
+		return $newName;
 	}
 }
