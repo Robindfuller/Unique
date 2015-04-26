@@ -3,6 +3,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/build.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/build-status/master)
 [![Code Quality](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/)
 [![Code Coverage](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/)
+[![Packagist](https://img.shields.io/packagist/v/rm/unique.svg)](https://packagist.org/packages/rm/unique)
 
 Uniqe is simple library for generating unique filenames in directories.
 
