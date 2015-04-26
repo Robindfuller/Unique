@@ -1,6 +1,6 @@
 # Unique
 
-[![Build Status](https://travis-ci.org/romanmatyus/Unique.svg)](https://travis-ci.org/romanmatyus/Unique)
+[![Build Status](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/build.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/build-status/master)
 [![Code Quality](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/)
 [![Code Coverage](https://scrutinizer-ci.com/g/romanmatyus/Unique/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/romanmatyus/Unique/)
 
